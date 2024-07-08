@@ -1,0 +1,27 @@
+<main class="container">
+  <app-next-previous-scroll-bar>
+    <div *ngFor="let i of categories" class="categorie">{{ i }}</div>
+  </app-next-previous-scroll-bar>
+  <div class="article-list" *ngIf="this.postObservable$ | async as postsList">
+    <div class="card mb-3" *ngFor="let post of postsList">
+      <div class="card-header">
+        <div class="d-flex">
+          <img ngSrc="https://picsum.photos/200" class="rounded-circle" width="24px" alt="">
+          <div class="ms-2">{{ post.user.name }} - {{ formatDateTime(post.publicationDate) }}</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <a href="{{ post.url }}" class="link-offset-2 link-underline link-underline-opacity-0 text-black">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.summary}}</p>
+        </a>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex align-items-center">
+          <div class="fw-bold">{{ getCategoriesInString(post.categories) }}</div>
+          <div class="ms-2 fw-light">10 min to read</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

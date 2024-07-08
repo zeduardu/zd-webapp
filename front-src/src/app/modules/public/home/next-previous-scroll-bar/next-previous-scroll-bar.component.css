@@ -1,0 +1,67 @@
+.categories-scroller {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden ;
+  padding: 8px 0;
+  margin: 24px 0;
+}
+
+.categories-list {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0 16px;
+}
+
+.list-with-scroll {
+  display: flex;
+  margin: 5px;
+}
+
+.list {
+  flex-grow: 1;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.left-paddle {
+  left: 0;
+}
+
+.right-paddle {
+  right: 0;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+}
+
+.scroll-button button {
+  border: none;
+}
+
+.disable,
+.disable:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.26);
+  border: none;
+}
+
+.scroll-left {
+  left: 0;
+  order: -1; /* To pevent ExpressionChangedAfterItHasBeenCheckedError */
+}
+
+.scroll-right {
+  right: 0;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%);
+}
