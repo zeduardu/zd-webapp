@@ -1,13 +1,16 @@
 {
 	"folders": [
 		{
-			"path": "api/core"
-		},
-		{
+			"name": "UI",
 			"path": "front-src"
 		},
 		{
+			"name": "API",
+			"path": "api/core"
+		},
+		{
+			"name": "DOCS",
 			"path": "documentation"
 		}
-	]
+	],
 }

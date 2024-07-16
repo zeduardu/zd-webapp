@@ -1,0 +1,50 @@
+@startuml
+
+class Post {
+    -id: int
+    -url: string
+    -title: string
+    -summary: string
+    -content: string
+    -publishedAt: date
+    -updatedAt: date
+}
+
+class Category {
+    -id: int
+    -url: string
+    -name: string
+    -description: string
+    -createdAt: date
+    -updatedAt: date
+}
+
+class User {
+    -id: int
+    -username: string
+    -email: string
+    -password: string
+    -createdAt: date
+    -updatedAt: date
+}
+
+enum Role {
+    ADMIN
+    USER
+    GUEST
+}
+
+class Comment {
+    -id: int
+}
+
+Role -- User
+User "1" -right- "0..*" Post : > write
+Post "*" -- "*" Category
+User "1"-- "*" Comment
+Post "1" -- "*" Comment
+
+note right of Post::url
+    <b>unique</b> field
+end note
+@enduml

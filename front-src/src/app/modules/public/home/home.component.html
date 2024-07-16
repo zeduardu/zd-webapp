@@ -6,7 +6,7 @@
     <div class="card mb-3" *ngFor="let post of postsList">
       <div class="card-header">
         <div class="d-flex">
-          <img ngSrc="https://picsum.photos/200" class="rounded-circle" width="24px" alt="">
+          <img ngSrc="https://picsum.photos/200" class="rounded-circle" width=24 height=24 alt="">
           <div class="ms-2">{{ post.user.name }} - {{ formatDateTime(post.publicationDate) }}</div>
         </div>
       </div>

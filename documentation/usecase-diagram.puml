@@ -1,0 +1,52 @@
+@startuml usecase-diagram
+skinparam backgroundColor #EEEBDC
+
+actor User
+actor Admin
+actor Writer
+actor Guest
+
+'usecase "Manage posts" as UC2
+
+'usecase "Update post" as updatepost
+'usecase "List posts" as listposts
+'usecase "Read post" as readpost
+usecase "Write post" as writepost
+'usecase "Remove post" as deletepost
+'usecase "Login" as login
+'usecase "Register" as register
+'usecase "Comment post" as commentpost
+'usecase "Remove comment" as deletecomment
+
+
+User <|-right- Admin
+User <|-right- Writer
+
+'Guest -- login
+'Guest -- listposts
+'Guest -- readpost
+
+'User -- listposts
+'User -- commentpost
+'User -- readpost
+
+'Admin -- deletepost
+'Admin -- deletecomment
+
+
+'Writer -- updatepost
+Writer -- writepost
+'Writer -- deletepost
+
+'login <.. register : <<extend>>
+
+
+' note right of UC2
+'   This is a secondary use case
+'   that refers to the process of
+'   maintaining the registration 
+'   of posts (CRUD) belonging to 
+'   the site.
+' end note
+
+@enduml
