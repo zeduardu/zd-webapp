@@ -1,9 +1,9 @@
-export class PostReponseDto {
-  id: bigint;
+export class PostResponseDto {
+  id: string;
   url: string;
   title: string;
   summary: string | null;
   content: string;
   publishedAt: Date;
-  updatedAt: Date;s
+  updatedAt: Date;
 }
