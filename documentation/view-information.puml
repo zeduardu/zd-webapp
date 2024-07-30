@@ -1,71 +1,58 @@
 @startuml
-
-package "Clean Architecture" {
-    package "Domain" {
-        class Entity {
-        }
-        class UseCase {
-        }
+    class Entity {
     }
-
-    package "Application" {
-        class Service {
-        }
-        class Controller {
-        }
-        class Presenter {
-        }
+    class UseCase {
     }
-
-    package "Infrastructure" {
-        class Repository {
-        }
-        class Gateway {
-        }
-        class UI {
-        }
+    class Service {
+    }
+    class Controller {
+    }
+    class Presenter {
+    }
+    class Repository {
+    }
+    class Gateway {
+    }
+    class UI {
     }
 
     ' Relationships
-    Entity <|-- UseCase : Uses
-    UseCase <|-- Service : Implements
-    Service <|-- Controller : Uses
-    Service <|-- Presenter : Uses
-    Repository <|-- Service : Implements
-    Gateway <|-- Service : Implements
-    UI <|-- Controller : Implements
+    Entity -right- UseCase : < Uses
+    Entity -left- Repository : < Uses
+    Repository -right- UseCase : < Implements
+    UseCase -- Service : < Implements
+    Service -- Controller : < Implements
 
-    ' Annotations to clarify
-    note right of Entity
-        Entities are the core business objects.
-    end note
+    ' ' Annotations to clarify
+    ' note right of Entity
+    '     Entities are the core business objects.
+    ' end note
 
-    note right of UseCase
-        Use cases are the application specific business rules.
-    end note
+    ' note right of UseCase
+    '     Use cases are the application specific business rules.
+    ' end note
 
-    note right of Service
-        Services contain the business logic and orchestrate use cases.
-    end note
+    ' note right of Service
+    '     Services contain the business logic and orchestrate use cases.
+    ' end note
 
-    note right of Controller
-        Controllers handle the input, convert it into use case requests.
-    end note
+    ' note right of Controller
+    '     Controllers handle the input, convert it into use case requests.
+    ' end note
 
-    note right of Presenter
-        Presenters format the response data to the UI.
-    end note
+    ' note right of Presenter
+    '     Presenters format the response data to the UI.
+    ' end note
 
-    note right of Repository
-        Repositories abstract data access and storage.
-    end note
+    ' note right of Repository
+    '     Repositories abstract data access and storage.
+    ' end note
 
-    note right of Gateway
-        Gateways handle external systems and services.
-    end note
+    ' note right of Gateway
+    '     Gateways handle external systems and services.
+    ' end note
 
-    note right of UI
-        UI represents the user interface layer.
-    end note
-}
+    ' note right of UI
+    '     UI represents the user interface layer.
+    ' end note
 @enduml
