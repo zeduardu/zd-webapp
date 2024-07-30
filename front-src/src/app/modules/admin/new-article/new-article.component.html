@@ -1,7 +1,19 @@
 <p>new-article works!</p>
-<editor
-  [(ngModel)]="content"
-  apiKey="yibdw7isapwgjgvo5t9of00shyssrytkduzhmfbdjeenskej"
-  id="editor0a1b"></editor>
+<div class="mb-3">
+  <label for="title" class="form-label">Title:</label>
+  <input id="title" type="text" class="form-control" />
+</div>
+<div class="mb-3">
+  <label for="summary" class="form-label">Summary:</label>
+  <input id="summary" type="text" class="form-control" />
+</div>
+<div class="mb-3">
+  <label for="editor0a1b" class="form-label">Content:</label>
+  <editor
+    [(ngModel)]="content"
+    apiKey="yibdw7isapwgjgvo5t9of00shyssrytkduzhmfbdjeenskej"
+    id="editor0a1b"
+  />
+</div>
 
 <p>{{ content }}</p>

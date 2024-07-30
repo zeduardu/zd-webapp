@@ -4,7 +4,7 @@ import {NewArticleComponent} from "./new-article/new-article.component";
 
 const routes: Routes = [
   {
-    path: 'new-article',
+    path: 'write',
     component: NewArticleComponent
   }
 ];
