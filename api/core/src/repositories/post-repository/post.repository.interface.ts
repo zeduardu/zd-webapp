@@ -1,3 +1,5 @@
+export const POST_REPOSITORY = 'IPostRepository';
+
 import { Post } from '../../entities/post.entity';
 
 export interface PostRepositoryInterface {
