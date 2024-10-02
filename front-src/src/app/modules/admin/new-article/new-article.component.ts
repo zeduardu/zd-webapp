@@ -17,8 +17,10 @@ export class NewArticleComponent {
   content: string = '';
   init: EditorComponent['init'] = {
     menubar: false,
-    plugins: 'image',
-    toolbar: 'image',
+    plugins:
+      'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons accordion',
+    toolbar:
+      'save | undo redo | accordion accordionremove | blocks fontfamily fontsize | bold italic underline strikethrough | align numlist bullist | link image | table media | lineheight outdent indent| forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | anchor codesample',
     file_picker_callback: (callback, value, meta) => {
       const input = document.createElement('input');
       input.setAttribute('type', 'file');

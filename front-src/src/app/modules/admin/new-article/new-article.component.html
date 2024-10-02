@@ -1,15 +1,15 @@
 <div class="container">
-<p>new-article works!</p>
+<h1>Novo artigo</h1>
 <div class="mb-3">
-  <label for="title" class="form-label">Title:</label>
+  <label for="title" class="form-label">Titulo:</label>
   <input id="title" type="text" class="form-control" />
 </div>
 <div class="mb-3">
-  <label for="summary" class="form-label">Summary:</label>
-  <input id="summary" type="text" class="form-control" />
+  <label for="summary" class="form-label">Resumo:</label>
+  <textarea id="summary" rows="5" class="form-control"></textarea>
 </div>
 <div class="mb-3">
-  <label for="editor-content" class="form-label">Content:</label>
+  <label for="editor-content" class="form-label">Conteúdo:</label>
   <editor
     [(ngModel)]="content"
     [init]="init"
